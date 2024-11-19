@@ -39,7 +39,7 @@ Feinanzigen ist eine **open source** MIT-lizensierte Chrome Erweiterung, die dei
 
 #### Momentan nur per Entwicklermodus
 
-- [Lade den letzten Release herunter](https://github.com/simonsagstetter/postsandreposts/releases)
+- [Lade den letzten Release herunter](https://github.com/simonsagstetter/feinanzeigen/releases)
 - Entpacke die ZIP Datei
 - Öffne in deinem auf Chromium basierenden Webbrowser die Erweiterungseinstellungen
 - Aktiviere dort den Entwicklermodus

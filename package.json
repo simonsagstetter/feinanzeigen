@@ -1,7 +1,7 @@
 {
   "name": "feinanzeigen",
   "version": "1.0.0",
-  "description": "Remove ads",
+  "description": "Eine aufgeräumte Version der Kleinanzeigen Suche",
   "private": true,
   "scripts": {
     "watch": "webpack --mode=development --watch --config config/webpack.config.js",
