@@ -27,7 +27,7 @@ Feinanzeigen
 
 ## Beschreibung
 
-Feinanzigen ist eine **open source** MIT-lizensierte Chrome Erweiterung, die deine Suche auf www.kleinzeigen.de aufräumt. Sie entfernt unnötige Werbeanzeigen, optimiert die Darstellung und bietet erweiterte Funktionalität.
+Feinanzigen ist eine **open source** MIT-lizensierte Chrome Erweiterung, die deine Suche auf www.kleinanzeigen.de aufräumt. Sie entfernt unnötige Werbeanzeigen, optimiert die Darstellung und bietet erweiterte Funktionalität.
 
 ## Features
 
