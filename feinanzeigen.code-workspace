@@ -1,0 +1,17 @@
+{
+	"folders": [
+	  {
+		"path": "."
+	  }
+	],
+	"settings": {
+	  "jest.enable": true,
+	  "jest.jestCommandLine": "npm run test --",
+	  "jest.coverageFormatter": "GutterFormatter",
+	  "jest.rootPath": "./",
+	  "jest.runMode": "watch",
+	  "pieces.cloudCapabilities": "Blended",
+	  "pieces.telemetry": true
+	}
+  }
+  

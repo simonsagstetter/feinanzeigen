@@ -1,0 +1,55 @@
+#fa-loading {
+    position: fixed;
+    flex-direction: column;
+    width: 100vw;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    background: rgba(255, 255, 255, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#fa-loading-image {
+    height: 100px;
+    width: 100px;
+    animation: pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+#fa-loading-text {
+    font-family: "Helvetica Neue", sans-serif;
+    font-weight: 400;
+    color: #326916;
+    font-size: 0.8rem;
+}
+
+#fa-ad-load-desc-wrapper {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 999;
+}
+
+#fa-ad-load-desc-btn {
+    z-index: 999;
+    height: auto;
+    min-height: unset;
+    padding: 0.5rem 0.75rem;
+    text-align: center;
+    border-radius: 0px;
+    border-top-left-radius: 2px;
+    font-weight: 400;
+    background-color: #d3f28d;
+    color: #1d4b00;
+    cursor: pointer;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: .5;
+    }
+}

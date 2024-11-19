@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Feinanzeigen",
+  "version": "1.0.0",
+  "description": "Eine aufgeräumte Version der Kleinanzeigen Suche",
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.kleinanzeigen.de/*"],
+      "run_at": "document_idle",
+      "css": ["content.css"],
+      "js": ["contentScript.js"]
+    }
+  ],
+  "web_accessible_resources": [{
+    "matches": ["<all_urls>"],
+    "resources": ["ka.svg"]
+}]
+}
