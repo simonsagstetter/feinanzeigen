@@ -53,3 +53,77 @@
         opacity: .5;
     }
 }
+
+#fa-gallery {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    background: rgb(0, 0, 0, 0.9);
+    display: flex;
+}
+
+#fa-gallery {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    background-color: transparent;
+    display: flex;
+    top: 0;
+    left: 0;
+}
+
+#fa-gallery-close-btn {
+    position: absolute;
+    top: 25px;
+    right: 50px;
+    background: rgba(0, 0, 0, 0) url(https://static.kleinanzeigen.de/static/img/common/viewad-gallery/close.svg) no-repeat center center;
+    width: 24px;
+    height: 24px;
+    z-index: 9999;
+}
+
+#fa-dialog {
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+    max-width: unset;
+    max-height: unset;
+}
+
+#fa-dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+#fa-image-loading {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.8);
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#fa-image-loading-image {
+    height: 50px;
+    width: 50px;
+    animation: pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}

@@ -9,7 +9,7 @@ Feinanzeigen
 
 <div align="center">
 
-![Static Badge](https://img.shields.io/badge/version-dev-blue?style=for-the-badge)
+![Static Badge](https://img.shields.io/badge/version-1.1.0-blue?style=for-the-badge)
 ![Static Badge](https://img.shields.io/badge/license-MIT-orange?style=for-the-badge)
 ![Static Badge](https://img.shields.io/badge/contributers-1-red?style=for-the-badge)
 
@@ -34,6 +34,7 @@ Feinanzigen ist eine **open source** MIT-lizensierte Chrome Erweiterung, die dei
 - Entfernt Werbeanzeigen um das Suchlayout und aus den Suchergebnissen
 - Optimiert die Darstellung des Suchlayouts und der Suchergebnisse
 - Fügt einen Button zu jedem Suchergebnis hinzu, mit dem die gesamte Beschreibung geladen und in der Vorschau angezeigt werden kann
+- Per Klick auf das Vorschaubild in den Suchergebnissen wird die Bildergallerie der Anzeige geöffnet. Diese kann auch per Tastatur gesteuert werden
 
 ## Installation
 
