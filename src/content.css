@@ -6,7 +6,7 @@
     pointer-events: none;
     z-index: 9999;
     background: rgba(255, 255, 255, 0.9);
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
 }
@@ -52,17 +52,6 @@
     50% {
         opacity: .5;
     }
-}
-
-#fa-gallery {
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    background: rgb(0, 0, 0, 0.9);
-    display: flex;
 }
 
 #fa-gallery {
@@ -126,4 +115,9 @@
     height: 50px;
     width: 50px;
     animation: pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+#fa-liked {
+    display: inline-block;
+    padding: 0 10px;
 }

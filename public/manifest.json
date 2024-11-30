@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Feinanzeigen",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Eine aufgeräumte Version der Kleinanzeigen Suche",
   "icons": {
     "16": "icons/icon16.png",
