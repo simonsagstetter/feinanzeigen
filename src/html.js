@@ -42,7 +42,7 @@ export default class HTML {
    */
   getHeart() {
     return this.templateEngine.parseAndRenderSync(
-      `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none"><path fill="#326916" fill-rule="evenodd" d="M8.73 14.23a1 1 0 0 1-1.46 0L2.14 8.78a4.02 4.02 0 0 1 0-5.62 3.85 3.85 0 0 1 5.86.4 3.85 3.85 0 0 1 5.86-.4 4.02 4.02 0 0 1 0 5.62l-5.13 5.45Z" clip-rule="evenodd"/></svg>`
+      `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" stroke="#326916" fill="none"><path fill="#326916" fill-rule="evenodd" d="M8.73 14.23a1 1 0 0 1-1.46 0L2.14 8.78a4.02 4.02 0 0 1 0-5.62 3.85 3.85 0 0 1 5.86.4 3.85 3.85 0 0 1 5.86-.4 4.02 4.02 0 0 1 0 5.62l-5.13 5.45Z" clip-rule="evenodd"/></svg>`
     );
   }
 

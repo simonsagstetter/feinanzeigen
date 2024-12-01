@@ -31,7 +31,7 @@ export default class SearchResults {
   /**
    * Process the search results by applying styles and features.
    */
-  process() {
+  async process() {
     const nodeSelector = $(
       '#srchrslt-adtable, #srchrslt-adtable-altads',
       this.container
@@ -47,7 +47,10 @@ export default class SearchResults {
         .filter((adItem) => adItem.firstElementChild.tagName === 'ARTICLE')
         .map(this.addStylings)
         .map(this.addFeatures);
+
+      return await Promise.all(adItems);
     }
+    return undefined;
   }
 
   /**
@@ -97,7 +100,7 @@ export default class SearchResults {
   addFeatures(adItem) {
     const article = $('article', adItem),
       link = article.dataset.href;
-    this.getAdDetailDOM(link).then((html) => {
+    return this.getAdDetailDOM(link).then((html) => {
       if (!html) return;
       $('.aditem-image > a', adItem).insertAdjacentHTML(
         'beforeend',
@@ -109,8 +112,10 @@ export default class SearchResults {
       );
 
       const { isLiked, likeElem } = this.getWatchListStatus(html);
-      if (isLiked)
-        $('.ellipsis', adItem).insertAdjacentElement('beforeend', likeElem);
+      if (isLiked) {
+        $('.ellipsis', adItem).insertAdjacentElement('afterbegin', likeElem);
+        css(adItem, { borderColor: '#b5e941', borderWidth: '2px' });
+      }
 
       $('.aditem-image', article).addEventListener(
         'click',
@@ -118,8 +123,8 @@ export default class SearchResults {
           this.events.emit('clickGallery', { html, article, event });
         }.bind(this)
       );
+      return adItem;
     });
-    return adItem;
   }
 
   /**

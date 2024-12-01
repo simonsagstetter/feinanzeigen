@@ -54,6 +54,15 @@ export const DEFAULT_ADS = {
 export const SEARCH_RESULT_CSS = {
   items: [
     {
+      sel: '#site-header',
+      multiple: false,
+      style: {
+        position: 'sticky',
+        top: '-83px',
+        zIndex: '3',
+      },
+    },
+    {
       sel: '.site-base',
       multiple: false,
       style: {
@@ -100,12 +109,20 @@ export const SEARCH_RESULT_CSS = {
       },
     },
     {
+      sel: '.l-splitpage-navigation.adslot-container > .l-container-row',
+      multiple: false,
+      style: {
+        position: 'sticky',
+        top: '5.7rem',
+      },
+    },
+    {
       sel: '#srchrslt-content',
       multiple: false,
       style: { width: '100%' },
     },
     {
-      sel: '.imagebox, .srpimagebox',
+      sel: '.imagebox.srpimagebox',
       multiple: true,
       style: {
         width: '250px',

@@ -34,24 +34,27 @@ const state = {
 function init() {
   state.gallery.mount();
   state.layout.adjust(SEARCH_RESULT_CSS);
-  state.results.process();
+  state.results.process().then(() => {
+    /**
+     * Event handler for gallery click events.
+     * @param {Object} param0 - The event data.
+     * @param {HTMLElement} param0.html - The HTML element.
+     * @param {HTMLElement} param0.article - The article element.
+     * @param {Event} param0.event - The click event.
+     */
+    state.results.events.on(
+      'clickGallery',
+      function ({ html, article, event }) {
+        event.preventDefault();
+        state.gallery.open(html, article);
+      }
+    );
 
-  /**
-   * Event handler for gallery click events.
-   * @param {Object} param0 - The event data.
-   * @param {HTMLElement} param0.html - The HTML element.
-   * @param {HTMLElement} param0.article - The article element.
-   * @param {Event} param0.event - The click event.
-   */
-  state.results.events.on('clickGallery', function ({ html, article, event }) {
-    event.preventDefault();
-    state.gallery.open(html, article);
+    setTimeout(() => {
+      state.ui.toggleLoading();
+      state.ui.toggleScrollBlocking();
+    }, 500);
   });
-
-  setTimeout(() => {
-    state.ui.toggleLoading();
-    state.ui.toggleScrollBlocking();
-  }, 1000);
 }
 
 /**
