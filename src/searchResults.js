@@ -15,7 +15,7 @@ export default class SearchResults {
   constructor(container, searchParameter) {
     Object.defineProperties(this, {
       container: {
-        value: $(container, searchParameter),
+        value: container ? $(container, searchParameter) : searchParameter,
       },
       html: {
         value: new HTML(),
@@ -29,13 +29,14 @@ export default class SearchResults {
   }
 
   /**
-   * Process the search results by applying styles and features.
+   * Processes a list of selectors, applies styles and features to certain elements,
+   * and removes elements with no children.
+   *
+   * @param {Array<string>} lists - An array of CSS selectors to be processed.
+   * @returns {Promise<Array<Element>|undefined>} A promise that resolves to an array of processed elements or undefined if no elements are found.
    */
-  async process() {
-    const nodeSelector = $(
-      '#srchrslt-adtable, #srchrslt-adtable-altads',
-      this.container
-    );
+  async process(lists) {
+    const nodeSelector = $(lists.join(','), this.container);
 
     const adItems =
       nodeSelector instanceof NodeList
@@ -44,7 +45,14 @@ export default class SearchResults {
 
     if (adItems.length > 0) {
       adItems
-        .filter((adItem) => adItem.firstElementChild.tagName === 'ARTICLE')
+        .reduce((updatedItems, adItem) => {
+          if (adItem?.children.length === 0) {
+            adItem.remove();
+            return updatedItems;
+          }
+          return [...updatedItems, adItem];
+        }, [])
+        .filter((adItem) => adItem?.firstElementChild?.tagName === 'ARTICLE')
         .map(this.addStylings)
         .map(this.addFeatures);
 
@@ -123,6 +131,7 @@ export default class SearchResults {
           this.events.emit('clickGallery', { html, article, event });
         }.bind(this)
       );
+
       return adItem;
     });
   }

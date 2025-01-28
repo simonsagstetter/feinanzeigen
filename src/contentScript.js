@@ -7,7 +7,11 @@ import { $ } from './dom';
 import Layout from './layout';
 import Gallery from './gallery';
 import SearchResults from './searchResults';
-import { SEARCH_RESULT_CSS } from './constants';
+import {
+  AD_ITEM_CSS,
+  PROFILE_RESULT_CSS,
+  SEARCH_RESULT_CSS,
+} from './constants';
 
 /**
  * Represents the application state.
@@ -25,16 +29,21 @@ const state = {
   ui: new UI(document),
   layout: new Layout(document),
   gallery: new Gallery(document),
-  results: new SearchResults('#srchrslt-content', document),
+  results: undefined,
 };
 
 /**
  * Initializes the application components and sets up event listeners.
+ * @param {Object} params - The initialization parameters.
+ * @param {string|null} params.content - The content selector or null.
+ * @param {Array<string>} params.lists - The list of selectors for processing.
+ * @param {string} params.css - The CSS class to apply for layout adjustments.
  */
-function init() {
+function init({ content, lists, css }) {
+  state.results = new SearchResults(content, document);
   state.gallery.mount();
-  state.layout.adjust(SEARCH_RESULT_CSS);
-  state.results.process().then(() => {
+  state.layout.adjust(css);
+  state.results.process(lists).then(() => {
     /**
      * Event handler for gallery click events.
      * @param {Object} param0 - The event data.
@@ -53,12 +62,13 @@ function init() {
     setTimeout(() => {
       state.ui.toggleLoading();
       state.ui.toggleScrollBlocking();
-    }, 500);
+    }, 400);
   });
 }
 
 /**
  * Sets up the application on window load.
+ * Initializes components based on the current URL path.
  */
 window.addEventListener('load', () => {
   const path = window.location.pathname;
@@ -67,9 +77,34 @@ window.addEventListener('load', () => {
   state.adblocker.keepObserving();
   $('body').insertAdjacentHTML('afterbegin', state.html.getPageLoader());
 
-  if (path.includes('s-') && !path.includes('s-anzeige')) {
+  if (
+    path.includes('s-') &&
+    !path.includes('s-anzeige') &&
+    !path.includes('s-bestandsliste')
+  ) {
     state.ui.toggleLoading();
     state.ui.toggleScrollBlocking();
-    init();
+    init({
+      content: '#srchrslt-content',
+      lists: ['#srchrslt-adtable, #srchrslt-adtable-altads'],
+      css: SEARCH_RESULT_CSS,
+    });
+  } else if (path.includes('s-bestandsliste')) {
+    state.ui.toggleLoading();
+    state.ui.toggleScrollBlocking();
+    init({
+      content: null,
+      lists: ['#page-searchresults-adtable'],
+      css: PROFILE_RESULT_CSS,
+    });
+  } else if (path.includes('s-anzeige')) {
+    state.ui.toggleLoading();
+    state.ui.toggleScrollBlocking();
+    state.layout.adjust(AD_ITEM_CSS);
+    init({
+      content: '#site-content',
+      lists: ['.ad-list'],
+      css: PROFILE_RESULT_CSS,
+    });
   }
 });

@@ -27,9 +27,9 @@ export default class Layout {
   adjust(targets) {
     targets.items.forEach(({ sel, multiple, style }) => {
       const nodes = $(sel, this.document);
-      if (multiple && nodes instanceof NodeList) {
+      if (multiple && nodes instanceof NodeList && nodes.length !== 0) {
         cssAll(nodes, style);
-      } else {
+      } else if (!multiple && nodes && nodes instanceof HTMLElement) {
         css(nodes, style);
       }
     });
