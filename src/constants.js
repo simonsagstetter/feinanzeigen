@@ -58,7 +58,7 @@ export const SEARCH_RESULT_CSS = {
       multiple: false,
       style: {
         position: 'sticky',
-        top: '-84px',
+        top: '-92px',
         zIndex: '100',
       },
     },
@@ -108,14 +108,14 @@ export const SEARCH_RESULT_CSS = {
         gap: '2rem',
       },
     },
-    {
-      sel: '.l-splitpage-navigation.adslot-container > .l-container-row',
-      multiple: false,
-      style: {
-        position: 'sticky',
-        top: '5.7rem',
-      },
-    },
+    // {
+    //   sel: '.l-splitpage-navigation.adslot-container > .l-container-row',
+    //   multiple: false,
+    //   style: {
+    //     position: 'sticky',
+    //     top: '5.7rem',
+    //   },
+    // },
     {
       sel: '#srchrslt-content',
       multiple: false,
