@@ -30,6 +30,11 @@ export default class UI {
         writable: true,
         enumerable: true,
       },
+      isScrollTop: {
+        value: false,
+        writable: true,
+        enumerable: true,
+      },
     });
   }
 
@@ -51,5 +56,34 @@ export default class UI {
     const display = prevIsLoading ? 'none' : 'flex';
     css($('#fa-loading', this.document), { display });
     this.isLoading = !prevIsLoading;
+  }
+
+  toggleScrollTop() {
+    if (typeof window !== 'undefined') {
+      window.addEventListener('scroll', function (e) {
+        const scrollTop = e.target.scrollingElement.scrollTop;
+        if (scrollTop >= 1000 && !this.isScrollTop) {
+          css($('#fa-scrolltop', this.document), {
+            opacity: 1,
+            visibility: 'visible',
+          });
+          this.isScrollTop = true;
+        } else if (scrollTop < 1000 && this.isScrollTop) {
+          css($('#fa-scrolltop', this.document), {
+            opacity: 0,
+            visibility: 'hidden',
+          });
+          this.isScrollTop = false;
+        }
+      });
+
+      $('#fa-scrolltop', this.document).addEventListener('click', function () {
+        window.scrollTo({
+          top: 0,
+          left: 0,
+          behavior: 'smooth',
+        });
+      });
+    }
   }
 }

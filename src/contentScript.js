@@ -76,6 +76,8 @@ window.addEventListener('load', () => {
   state.adblocker.removeAds();
   state.adblocker.keepObserving();
   $('body').insertAdjacentHTML('afterbegin', state.html.getPageLoader());
+  $('body').insertAdjacentHTML('beforeend', state.html.getScrollToTop());
+  state.ui.toggleScrollTop();
 
   if (
     path.includes('s-') &&

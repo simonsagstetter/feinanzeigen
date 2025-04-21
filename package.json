@@ -1,6 +1,6 @@
 {
   "name": "feinanzeigen",
-  "version": "1.1.5",
+  "version": "1.2.5",
   "description": "Eine aufgeräumte Version der Kleinanzeigen Suche",
   "private": true,
   "scripts": {
