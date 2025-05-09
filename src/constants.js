@@ -294,3 +294,15 @@ export const AD_ITEM_CSS = {
     },
   ],
 };
+
+export const START_PAGE_CSS = {
+  items: [
+    {
+      sel: '.grid.bg-backgroundSubdued',
+      multiple: false,
+      style: {
+        gridTemplate: 'none',
+      },
+    },
+  ],
+};

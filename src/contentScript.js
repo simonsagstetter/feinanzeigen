@@ -11,6 +11,7 @@ import {
   AD_ITEM_CSS,
   PROFILE_RESULT_CSS,
   SEARCH_RESULT_CSS,
+  START_PAGE_CSS,
 } from './constants';
 
 /**
@@ -108,5 +109,7 @@ window.addEventListener('load', () => {
       lists: ['.ad-list'],
       css: PROFILE_RESULT_CSS,
     });
+  } else if (path === '/') {
+    state.layout.adjust(START_PAGE_CSS);
   }
 });
