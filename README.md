@@ -1,6 +1,6 @@
 <p align="center">
-    <img src="./assets/ka.svg"
-    width="100">
+    <img src="./assets/Header.png"
+    width="1000">
 </p>
 
 <h1 align="center">
@@ -8,6 +8,12 @@ Feinanzeigen
 </h1>
 
 <div align="center">
+
+<a href="https://chromewebstore.google.com/detail/feinanzeigen/kcfpjnbaipjnepkgfabfeifdbjocngng">
+
+![Static Badge](https://img.shields.io/badge/install%20for%20chrome-585858?style=for-the-badge&logo=googlechrome&logoColor=white)
+
+</a>
 
 ![Static Badge](https://img.shields.io/badge/version-1.2.6-blue?style=for-the-badge)
 ![Static Badge](https://img.shields.io/badge/license-MIT-orange?style=for-the-badge)
@@ -21,15 +27,13 @@ Feinanzeigen
 
 **Eine Chrome Erweiterung, die deine Kleinanzeigen Suche aufräumt.**
 
-> **Achtung:** Dieses Projekt ist noch in der Entwicklungsphase. Es können noch unerwartete Fehler und Bugs auftreten.
-
 </div>
 
 ## Beschreibung
 
 Feinanzigen ist eine **open source** MIT-lizensierte Chrome Erweiterung, die deine Suche auf www.kleinanzeigen.de aufräumt. Sie entfernt unnötige Werbeanzeigen, optimiert die Darstellung und bietet erweiterte Funktionalität.
 
-## Features
+## Funktionen
 
 - Entfernt Werbeanzeigen um das Suchlayout und aus den Suchergebnissen
 - Optimiert die Darstellung des Suchlayouts und der Suchergebnisse
@@ -38,7 +42,15 @@ Feinanzigen ist eine **open source** MIT-lizensierte Chrome Erweiterung, die dei
 
 ## Installation
 
-#### Momentan nur per Entwicklermodus
+#### Chrome Web store
+
+<a href="https://chromewebstore.google.com/detail/posts-and-reposts/nifenhehcbhgjbemfhepdeamnicpdpcm">
+
+![Static Badge](https://img.shields.io/badge/install%20for%20chrome-585858?style=for-the-badge&logo=googlechrome&logoColor=white)
+
+</a>
+
+#### Manuell
 
 - [Lade den letzten Release herunter](https://github.com/simonsagstetter/feinanzeigen/releases)
 - Entpacke die ZIP Datei
@@ -46,6 +58,6 @@ Feinanzigen ist eine **open source** MIT-lizensierte Chrome Erweiterung, die dei
 - Aktiviere dort den Entwicklermodus
 - Klicke auf entpackte Erweiterung laden und wähle den Ordner der entpackten ZIP Datei aus
 
-## Contribution
+## Problembehandlung
 
-Feedback, Vorschläge oder Anregungen sind herzlich willkommen. Eröffnet dafür gerne einen Issue
+Es können unter Umständen unterwartete Fehler auftreten, wenn Kleinanzeigen selbst neue Updates für die Benutzeroberfläche veröffentlicht. Ich werde in diesem Fall so schnell wie möglich versuchen darauf mit einem Update zu reagieren. Bitte geduldet euch dafür ein bisschen, da ich der einzige Entwickler bin, der an dieser Erweiterung arbeitet. Ihr könnt die Erweiterung in den Einstellungen eures Browsers zeitweise deaktivieren. Für alle anderen Fälle, wie Feedback, Vorschläge oder Anregungen, eröffent gerne auch einen Issue
