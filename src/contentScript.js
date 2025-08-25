@@ -109,7 +109,10 @@ window.addEventListener('load', () => {
       lists: ['.ad-list'],
       css: PROFILE_RESULT_CSS,
     });
-  } else if (path === '/') {
+  } else if (
+    path === '/' ||
+    (path.match(/^\/stadt\/\w+\/$/)?.length ?? 0) > 0
+  ) {
     state.layout.adjust(START_PAGE_CSS);
   }
 });

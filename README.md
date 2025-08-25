@@ -15,7 +15,7 @@ Feinanzeigen
 
 </a>
 
-![Static Badge](https://img.shields.io/badge/version-1.2.6-blue?style=for-the-badge)
+![Static Badge](https://img.shields.io/badge/version-1.2.7-blue?style=for-the-badge)
 ![Static Badge](https://img.shields.io/badge/license-MIT-orange?style=for-the-badge)
 ![Static Badge](https://img.shields.io/badge/contributers-1-red?style=for-the-badge)
 
