@@ -11,8 +11,9 @@ export default class SearchResults {
    * Create a SearchResults instance.
    * @param {string} container - The container selector for search results.
    * @param {string} searchParameter - The search parameter to filter results.
+   * @param {boolean} isTailwind - For new styling classes used in search
    */
-  constructor(container, searchParameter) {
+  constructor(container, searchParameter, isTailwind) {
     Object.defineProperties(this, {
       container: {
         value: container ? $(container, searchParameter) : searchParameter,
@@ -20,11 +21,14 @@ export default class SearchResults {
       html: {
         value: new HTML(),
       },
+      isTailwind: {
+        value: isTailwind,
+      },
     });
     this.events = new EventEmitter();
-    this.addStylings = this.addStylings.bind(this);
+    this.addStyling = this.addStyling.bind(this);
     this.addFeatures = this.addFeatures.bind(this);
-    this.addDescrptionButton = this.addDescrptionButton.bind(this);
+    this.addDescriptionButton = this.addDescriptionButton.bind(this);
     this.getWatchListStatus = this.getWatchListStatus.bind(this);
   }
 
@@ -40,7 +44,7 @@ export default class SearchResults {
 
     const adItems =
       nodeSelector instanceof NodeList
-        ? [...nodeSelector].map((node) => [...node.children]).flat()
+        ? [...nodeSelector].flatMap((node) => [...node.children])
         : [...nodeSelector.children];
 
     if (adItems.length > 0) {
@@ -53,7 +57,7 @@ export default class SearchResults {
           return [...updatedItems, adItem];
         }, [])
         .filter((adItem) => adItem?.firstElementChild?.tagName === 'ARTICLE')
-        .map(this.addStylings)
+        .map(this.addStyling)
         .map(this.addFeatures);
 
       return await Promise.all(adItems);
@@ -82,19 +86,22 @@ export default class SearchResults {
    * @param {HTMLElement} adItem - The ad item element.
    * @returns {HTMLElement} The styled ad item element.
    */
-  addStylings(adItem) {
+  addStyling(adItem) {
     css(adItem, {
       marginBottom: '2rem',
       boxShadow: '3px 3px 5px 0px rgb(0, 0, 0, 0.04)',
       position: 'relative',
     });
 
-    css($('.ellipsis', adItem), {
+    const titleSelector = this.isTailwind ? 'h3' : '.ellipsis';
+    css($(titleSelector, adItem), {
       fontSize: '1.3rem',
       fontWeight: '500',
     });
 
-    const imgAnchorElement = $('.aditem-image > a', adItem);
+    const imgAnchorElement = this.isTailwind
+      ? $('a', adItem, true)[0]
+      : $('.aditem-image > a', adItem);
     css(imgAnchorElement, { position: 'relative' });
     setAttr(imgAnchorElement, { href: 'javascript:void(0)' });
     return adItem;
@@ -110,22 +117,30 @@ export default class SearchResults {
       link = article.dataset.href;
     return this.getAdDetailDOM(link).then((html) => {
       if (!html) return;
-      $('.aditem-image > a', adItem).insertAdjacentHTML(
-        'beforeend',
-        this.html.getImageLoader()
-      );
+
+      const titleElement = this.isTailwind
+        ? $('h3', adItem, true)[0]
+        : $('.ellipsis', adItem);
       article.insertAdjacentElement(
         'beforeend',
-        this.addDescrptionButton(html, article)
+        this.addDescriptionButton(html, article)
+      );
+
+      const imgAnchorElement = this.isTailwind
+        ? $('a', adItem, true)[0]
+        : $('.aditem-image > a', adItem);
+      imgAnchorElement.insertAdjacentHTML(
+        'beforeend',
+        this.html.getImageLoader()
       );
 
       const { isLiked, likeElem } = this.getWatchListStatus(html);
       if (isLiked) {
-        $('.ellipsis', adItem).insertAdjacentElement('afterbegin', likeElem);
+        titleElement.insertAdjacentElement('afterbegin', likeElem);
         css(adItem, { borderColor: '#b5e941', borderWidth: '2px' });
       }
 
-      $('.aditem-image', article).addEventListener(
+      $('div', article, true)[0].addEventListener(
         'click',
         function (event) {
           this.events.emit('clickGallery', { html, article, event });
@@ -142,18 +157,21 @@ export default class SearchResults {
    * @param {HTMLElement} article - The article element of the ad item.
    * @returns {HTMLElement} The description button element.
    */
-  addDescrptionButton(html, article) {
+  addDescriptionButton(html, article) {
     const button = this.html.renderHTLMElement(
       `<div id="fa-ad-load-desc-wrapper">
         <button id="fa-ad-load-desc-btn">Gesamte Beschreibung abrufen</div>
       </div>`
     );
+    const isTailwind = this.isTailwind;
     button.addEventListener('click', function (event) {
       event.preventDefault();
       event.stopImmediatePropagation();
       this.innerText = 'Beschreibung wird geladen...';
       const description = html('#viewad-description-text');
-      const adItemDetails = $('.aditem-main--middle--description', article);
+      const adItemDetails = isTailwind
+        ? $('p', article, true)[0]
+        : $('.aditem-main--middle--description', article);
       adItemDetails.innerHTML = '';
       adItemDetails.insertAdjacentHTML('afterbegin', description);
       this.style.display = 'none';

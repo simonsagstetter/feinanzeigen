@@ -22,3 +22,5 @@ npm-debug.log*
 .editorconfig
 
 postsandreposts.code-workspace
+
+.idea

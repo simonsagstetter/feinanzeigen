@@ -92,6 +92,13 @@ export default class Gallery {
     ).forEach((elem) => elem.remove());
 
     $('.galleryimage--info', imageBox, true).forEach((elem) => elem.remove());
+    $('.galleryimage-element-button', imageBox, true).forEach((elem) =>
+      elem.remove()
+    );
+    $('.galleryimage-large--cover', imageBox, true).forEach((elem) =>
+      elem.remove()
+    );
+
     imageBox.insertAdjacentHTML(
       'afterbegin',
       this.html.render(
@@ -100,6 +107,11 @@ export default class Gallery {
       </form>`
       )
     );
+
+    imageBox.addEventListener('click', (e) => {
+      e.stopPropagation();
+      $('#fa-gallery-close-btn', imageBox).click();
+    });
   }
 
   /**

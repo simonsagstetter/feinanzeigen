@@ -40,8 +40,8 @@ const state = {
  * @param {Array<string>} params.lists - The list of selectors for processing.
  * @param {string} params.css - The CSS class to apply for layout adjustments.
  */
-function init({ content, lists, css }) {
-  state.results = new SearchResults(content, document);
+function init({ content, lists, css, isTailwind = false }) {
+  state.results = new SearchResults(content, document, isTailwind);
   state.gallery.mount();
   state.layout.adjust(css);
   state.results.process(lists).then(() => {
@@ -91,6 +91,7 @@ window.addEventListener('load', () => {
       content: '#srchrslt-content',
       lists: ['#srchrslt-adtable, #srchrslt-adtable-altads'],
       css: SEARCH_RESULT_CSS,
+      isTailwind: true,
     });
   } else if (path.includes('s-bestandsliste')) {
     state.ui.toggleLoading();

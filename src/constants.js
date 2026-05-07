@@ -54,6 +54,24 @@ export const DEFAULT_ADS = {
 export const SEARCH_RESULT_CSS = {
   items: [
     {
+      sel: '#srchrslt > header',
+      multiple: false,
+      style: {
+        position: 'sticky',
+        top: '-92px',
+        zIndex: '100',
+      },
+    },
+    {
+      sel: 'body > header',
+      multiple: false,
+      style: {
+        position: 'sticky',
+        top: '-92px',
+        zIndex: '100',
+      },
+    },
+    {
       sel: '#site-header',
       multiple: false,
       style: {
@@ -63,7 +81,7 @@ export const SEARCH_RESULT_CSS = {
       },
     },
     {
-      sel: '.site-base',
+      sel: 'div.grid.grid-cols-\\[1fr_970px_1fr\\].bg-backgroundSubdued.pb-small.pt-large',
       multiple: false,
       style: {
         display: 'flex',
@@ -71,9 +89,23 @@ export const SEARCH_RESULT_CSS = {
       },
     },
     {
+      sel: '#srchrslt > div.grid.grid-cols-\\[1fr_970px_1fr\\].bg-backgroundSubdued.pb-small.pt-large > main',
+      multiple: false,
+      style: { width: '100%' },
+    },
+    {
       sel: '.site-base--content',
       multiple: false,
       style: { width: '100%' },
+    },
+    {
+      sel: '#srchrslt > div.grid.grid-cols-\\[1fr_970px_1fr\\].bg-backgroundSubdued.pb-small.pt-large > main > div > div.w-full.bg-backgroundSubdued.pb-small > div',
+      multiple: false,
+      style: {
+        width: '100%',
+        padding: '0 3rem 3rem 3rem',
+        gap: '2rem',
+      },
     },
     {
       sel: '#site-content',
@@ -84,12 +116,44 @@ export const SEARCH_RESULT_CSS = {
       },
     },
     {
+      sel: '#srchrslt > div.grid.grid-cols-\\[1fr_970px_1fr\\].bg-backgroundSubdued.pb-small.pt-large > main > div',
+      multiple: false,
+      style: {
+        maxWidth: 'none',
+      },
+    },
+    {
+      sel: '#main > div',
+      multiple: false,
+      style: {
+        width: '100%',
+        padding: '0 3rem',
+      },
+    },
+    {
       sel: '.srp-header',
       multiple: false,
       style: {
         marginBottom: '2rem',
         boxShadow: '3px 3px 5px 0px rgb(0, 0, 0, 0.04)',
         border: '1px solid #dddbd5',
+      },
+    },
+    {
+      sel: '#srchrslt-content > div.mb-small.rounded-xsmall.bg-surface > div',
+      multiple: false,
+      style: {
+        marginBottom: '2rem',
+        boxShadow: '3px 3px 5px 0px rgb(0, 0, 0, 0.04)',
+        border: '1px solid #dddbd5',
+      },
+    },
+    {
+      sel: '#srchrslt > div.grid.grid-cols-\\[1fr_970px_1fr\\].bg-backgroundSubdued.pb-small.pt-large > main > div > div.w-full.bg-backgroundSubdued.pb-small > div > aside > div.mb-small.flex.flex-col.rounded-xsmall.bg-surface',
+      multiple: false,
+      style: {
+        border: '1px solid #dddbd5',
+        boxShadow: '3px 3px 5px 0px rgb(0, 0, 0, 0.04)',
       },
     },
     {
@@ -108,18 +172,24 @@ export const SEARCH_RESULT_CSS = {
         gap: '2rem',
       },
     },
-    // {
-    //   sel: '.l-splitpage-navigation.adslot-container > .l-container-row',
-    //   multiple: false,
-    //   style: {
-    //     position: 'sticky',
-    //     top: '5.7rem',
-    //   },
-    // },
     {
       sel: '#srchrslt-content',
       multiple: false,
       style: { width: '100%' },
+    },
+    {
+      sel: '.aditem-image',
+      multiple: true,
+      style: {
+        flexBasis: '250px',
+      },
+    },
+    {
+      sel: '#srchrslt-adtable > li > article > div.relative.z-raised.basis-\\[200px\\]',
+      multiple: true,
+      style: {
+        flexBasis: '250px',
+      },
     },
     {
       sel: '.imagebox.srpimagebox',
@@ -130,10 +200,18 @@ export const SEARCH_RESULT_CSS = {
       },
     },
     {
-      sel: '.aditem-image',
+      sel: '#srchrslt-adtable > li > article > div.relative.z-raised.basis-\\[200px\\] > a > div',
       multiple: true,
       style: {
-        flexBasis: '250px',
+        width: '250px',
+        height: '200px',
+      },
+    },
+    {
+      sel: '#srchrslt-adtable > li > article > div.z-raised.flex.grow.basis-\\[398px\\].flex-col.overflow-hidden.pl-medium > div.my-xsmall.truncate',
+      multiple: true,
+      style: {
+        display: 'none',
       },
     },
     {
@@ -142,10 +220,29 @@ export const SEARCH_RESULT_CSS = {
       style: { fontWeight: '500' },
     },
     {
+      sel: '#srchrslt-adtable > li > article > div.z-raised.flex.grow.basis-\\[398px\\].flex-col.overflow-hidden.pl-medium > div.mb-xsmall.flex.items-start.justify-between.text-bodyRegular',
+      multiple: true,
+      style: { fontWeight: '500' },
+    },
+    {
       sel: '.aditem-main--middle--price-shipping--price, .aditem-main--middle--price-shipping--old-price',
       multiple: true,
       style: {
         fontSize: '20px',
+      },
+    },
+    {
+      sel: '#srchrslt-adtable > li > article > div.z-raised.flex.grow.basis-\\[398px\\].flex-col.overflow-hidden.pl-medium > div.flex.flex-col > div > p',
+      multiple: true,
+      style: {
+        fontSize: '20px',
+      },
+    },
+    {
+      sel: '#srchrslt-results > div:nth-child(1) > div.mx-auto.max-w-screen-custom',
+      multiple: false,
+      style: {
+        maxWidth: 'none',
       },
     },
   ],
@@ -158,7 +255,7 @@ export const PROFILE_RESULT_CSS = {
       multiple: false,
       style: {
         position: 'sticky',
-        top: '-84px',
+        top: '-92px',
         zIndex: '100',
       },
     },
@@ -257,6 +354,14 @@ export const PROFILE_RESULT_CSS = {
       multiple: true,
       style: {
         fontSize: '20px',
+      },
+    },
+    {
+      sel: '#main > div.l-splitpage-flex > div.l-splitpage-navigation > section',
+      multiple: false,
+      style: {
+        border: '1px solid #dddbd5',
+        boxShadow: '3px 3px 5px 0px rgb(0, 0, 0, 0.04)',
       },
     },
   ],
