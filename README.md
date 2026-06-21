@@ -1,56 +1,4 @@
->
-Achtung:
-Kleinanzeigen
-stellt
-sein
-Design-System
-nach
-und
-nach
-auf
-Tailwindcss
-um.
-Daher
-kann
-es
-in
-den
-kommenden
-Monaten
-erneut
-passieren,
-dass
-die
-Erweiterung
-nicht
-funktioniert.
-In
-diesem
-Fall
-empfehle
-ich
-euch
-diese
-zu
-deaktivieren
-und
-auf
-ein
-Update
-zu
-warten.
-Ich
-werde
-mich
-bemühen
-die
-Fixes
-so
-schnell
-wie
-möglich
-nachzuziehen.
-Danke!
+> Achtung: Kleinanzeigen stellt sein Design-System nach und nach auf Tailwindcss um. Daher kann es in den kommenden Monaten erneut passieren, dass die Erweiterung nicht funktioniert. In diesem Fall empfehle ich euch diese zu deaktivieren und auf ein Update zu warten. Ich werde mich bemühen die Fixes so schnell wie möglich nachzuziehen. Danke!
 
 <p align="center">
     <img src="./assets/Header.png"
@@ -79,112 +27,20 @@ Feinanzeigen
 
 </a>
 
-*
-*Eine
-Chrome
-Erweiterung,
-die
-deine
-Kleinanzeigen
-Suche
-aufräumt.
-**
+**Eine Chrome Erweiterung, die deine Kleinanzeigen Suche aufräumt.**
 
 </div>
 
 ## Beschreibung
 
-Feinanzigen
-ist
-eine
-*
-*open
-source
-**
-MIT-lizensierte
-Chrome
-Erweiterung,
-die
-deine
-Suche
-auf www.kleinanzeigen.de
-aufräumt.
-Sie
-entfernt
-unnötige
-Werbeanzeigen,
-optimiert
-die
-Darstellung
-und
-bietet
-erweiterte
-Funktionalität.
+Feinanzigen ist eine **open source** MIT-lizensierte Chrome Erweiterung, die deine Suche auf www.kleinanzeigen.de aufräumt. Sie entfernt unnötige Werbeanzeigen, optimiert die Darstellung und bietet erweiterte Funktionalität.
 
 ## Funktionen
 
--
-Entfernt
-Werbeanzeigen
-um
-das
-Suchlayout
-und
-aus
-den
-Suhergebnissen
--
-Optimiert
-die
-Darstellung
-des
-Suchlayouts
-und
-der
-Suchergebnisse
--
-Fügt
-einen
-Button
-zu
-jedem
-Suchergebnis
-hinzu,
-mit
-dem
-die
-gesamte
-Beschreibung
-geladen
-und
-in
-der
-Vorschau
-angezeigt
-werden
-kann
--
-Per
-Klick
-auf
-das
-Vorschaubild
-in
-den
-Suchergebnissen
-wird
-die
-Bildergallerie
-der
-Anzeige
-geöffnet.
-Diese
-kann
-auch
-per
-Tastatur
-gesteuert
-werden
+- Entfernt Werbeanzeigen um das Suchlayout und aus den Suhergebnissen
+- Optimiert die Darstellung des Suchlayouts und der Suchergebnisse
+- Fügt einen Button zu jedem Suchergebnis hinzu, mit dem die gesamte Beschreibung geladen und in der Vorschau angezeigt werden kann
+- Per Klick auf das Vorschaubild in den Suchergebnissen wird die Bildergallerie der Anzeige geöffnet. Diese kann auch per Tastatur gesteuert werden
 
 ## Installation
 
@@ -199,115 +55,11 @@ werden
 #### Manuell
 
 - [Lade den letzten Release herunter](https://github.com/simonsagstetter/feinanzeigen/releases)
--
-Entpacke
-die
-ZIP
-Datei
--
-Öffne
-in
-deinem
-auf
-Chromium
-basierenden
-Webbrowser
-die
-Erweiterungseinstellungen
--
-Aktiviere
-dort
-den
-Entwicklermodus
--
-Klicke
-auf
-entpackte
-Erweiterung
-laden
-und
-wähle
-den
-Ordner
-der
-entpackten
-ZIP
-Datei
-aus
+- Entpacke die ZIP Datei
+- Öffne in deinem auf Chromium basierenden Webbrowser die Erweiterungseinstellungen
+- Aktiviere dort den Entwicklermodus
+- Klicke auf entpackte Erweiterung laden und wähle den Ordner der entpackten ZIP Datei aus
 
 ## Problembehandlung
 
-Es
-können
-unter
-Umständen
-unterwartete
-Fehler
-auftreten,
-wenn
-Kleinanzeigen
-selbst
-neue
-Updates
-für
-die
-Benutzeroberfläche
-veröffentlicht.
-Ich
-werde
-in
-diesem
-Fall
-so
-schnell
-wie
-möglich
-versuchen
-darauf
-mit
-einem
-Update
-zu
-reagieren.
-Bitte
-geduldet
-euch
-dafür
-ein
-bisschen,
-da
-ich
-der
-einzige
-Entwickler
-bin,
-der
-an
-dieser
-Erweiterung
-arbeitet.
-Ihr
-könnt
-die
-Erweiterung
-in
-den
-Einstellungen
-eures
-Browsers
-zeitweise
-deaktivieren.
-Für
-alle
-anderen
-fälle,
-wie
-Feedback,
-Vorschläge
-oder
-Anregungen,
-eröffnet
-gerne
-auch
-einen
-Issue.
+Es können unter Umständen unterwartete Fehler auftreten, wenn Kleinanzeigen selbst neue Updates für die Benutzeroberfläche veröffentlicht. Ich werde in diesem Fall so schnell wie möglich versuchen darauf mit einem Update zu reagieren. Bitte geduldet euch dafür ein bisschen, da ich der einzige Entwickler bin, der an dieser Erweiterung arbeitet. Ihr könnt die Erweiterung in den Einstellungen eures Browsers zeitweise deaktivieren. Für alle anderen fälle, wie Feedback, Vorschläge oder Anregungen, eröffnet gerne auch einen Issue.
