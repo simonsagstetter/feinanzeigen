@@ -25,7 +25,11 @@ export const $ = (
  */
 export const css = (element, styles) => {
   Object.entries(styles).forEach(([key, value]) => {
-    element.style[key] = value;
+    try {
+      element.style[key] = value;
+    } catch (e) {
+      console.error(e);
+    }
   });
 };
 

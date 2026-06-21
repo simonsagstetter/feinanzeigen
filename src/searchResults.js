@@ -97,6 +97,7 @@ export default class SearchResults {
     css($(titleSelector, adItem), {
       fontSize: '1.3rem',
       fontWeight: '500',
+      display: 'flex',
     });
 
     const imgAnchorElement = this.isTailwind

@@ -87,11 +87,12 @@ window.addEventListener('load', () => {
   ) {
     state.ui.toggleLoading();
     state.ui.toggleScrollBlocking();
+    let isTailwind = document.querySelectorAll('bg-surface').length > 0;
     init({
       content: '#srchrslt-content',
       lists: ['#srchrslt-adtable, #srchrslt-adtable-altads'],
       css: SEARCH_RESULT_CSS,
-      isTailwind: true,
+      isTailwind,
     });
   } else if (path.includes('s-bestandsliste')) {
     state.ui.toggleLoading();

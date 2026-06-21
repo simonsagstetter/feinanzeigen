@@ -99,6 +99,14 @@ export const SEARCH_RESULT_CSS = {
       style: { width: '100%' },
     },
     {
+      sel: '.site-base',
+      multiple: false,
+      style: {
+        display: 'flex',
+        justifyContent: 'center',
+      },
+    },
+    {
       sel: '#srchrslt > div.grid.grid-cols-\\[1fr_970px_1fr\\].bg-backgroundSubdued.pb-small.pt-large > main > div > div.w-full.bg-backgroundSubdued.pb-small > div',
       multiple: false,
       style: {
